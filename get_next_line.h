@@ -6,7 +6,8 @@
 /*   By: aakhmeto <aakhmeto@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:37:21 by aakhmeto          #+#    #+#             */
-/*   Updated: 2025/11/19 13:37:22 by aakhmeto         ###   ########.fr       */
+/*   Updated: 2025/11/19 18:38:17 by aakhmeto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+char	*get_next_line(int fd);
