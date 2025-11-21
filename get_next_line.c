@@ -6,7 +6,7 @@
 /*   By: aakhmeto <aakhmeto@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:37:18 by aakhmeto          #+#    #+#             */
-/*   Updated: 2025/11/21 18:33:39 by aakhmeto         ###   ########.fr       */
+/*   Updated: 2025/11/21 19:16:58 by aakhmeto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,16 @@ static char* ft_line_copy(const char *buf_read, int len_line)
 	return (line);
 }
 
+static char *ft_create_tail(char *tail_read, int len_tail, int res_read)
+{
+	
+}
+
 static char	*ft_create_line(const char *buf_read, int res_read, char *tail_read)
 {
 	int		len_line;
 	int 	len_tail;
+	int		*line
 
 	len_line = ft_get_len_line(buf_read, res_read);
 	len_tail = res_read - len_tail;
@@ -62,15 +68,15 @@ static char	*ft_create_line(const char *buf_read, int res_read, char *tail_read)
 	{
 		if (!tail_read)
 		{
-			return(ft_line_copy(buf_read, len_line));
+			line = ft_line_copy(buf_read, len_line);
 		}
 		else
 		{
-			return(ft_strjoin(tail_read, ))
+			line = ft_strjoin(tail_read, ft_line_copy(buf_read, len_line));
 		}
-		
 	}
-	// create_tail
+	tail_read = ft_create_tail(char *tail_read, int len_tail, int res_read);
+	return (line);
 } 	
 
 char	*get_next_line(int fd)
