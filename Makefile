@@ -3,6 +3,7 @@
 # **************************************************************************** #
 
 NAME        = gnl            # имя исполняемого файла
+BONUS_NAME  = gnl_bonus
 CC          = cc
 CFLAGS      = -Wall -Wextra -Werror
 CPPFLAGS    = -D BUFFER_SIZE=$(BUFFER_SIZE)
@@ -14,6 +15,10 @@ BUFFER_SIZE ?= 1
 SRCS        = get_next_line.c get_next_line_utils.c main.c
 OBJS        = $(SRCS:.c=.o)
 
+# Бонусные файлы
+BONUS_SRCS  = get_next_line_bonus.c get_next_line_utils_bonus.c main.c
+BONUS_OBJS  = $(BONUS_SRCS:.c=.o)
+
 # **************************************************************************** #
 #                                   RULES                                      #
 # **************************************************************************** #
@@ -23,14 +28,19 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
+bonus: $(BONUS_NAME)
+
+$(BONUS_NAME): $(BONUS_OBJS)
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(BONUS_OBJS) -o $(BONUS_NAME)
+
 %.o: %.c get_next_line.h
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(BONUS_NAME)
 
 re: fclean all
 
@@ -43,6 +53,9 @@ run: $(NAME)
 
 run-sample: $(NAME)
 	./$(NAME) sample_input.txt
+
+run-bonus: bonus
+	./$(BONUS_NAME)
 
 # **************************************************************************** #
 #                              EXTRA / DEBUG RULES                             #
@@ -59,4 +72,4 @@ leaks2: $(NAME)
 # make re BUFFER_SIZE=1
 # make re BUFFER_SIZE=9999
 
-.PHONY: all clean fclean re leaks
+.PHONY: all clean fclean re leaks bonus run run-sample run-bonus
