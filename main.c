@@ -3,6 +3,7 @@
 #include <unistd.h>  // close, read
 #include <stdio.h>   // printf, perror
 #include <stdlib.h>  // free
+#include <string.h>
 
 /*
  * Функция для чтения и печати всех строк из заданного fd.
@@ -16,9 +17,9 @@ static void  read_from_fd(int fd, const char *name)
     printf("===== Чтение из: %s =====\n", name);
     while ((line = get_next_line(fd)) != NULL)
     {
-        printf("[%s][%d]: %s", name, line_num, line);
+        printf("[%s][%d][len = %ld]: \"%s\"", name, line_num, strlen(line), line);
         // если строка не заканчивается \n, добавим перевод строки для красоты
-        if (line[0] != '\0' && line[ft_strlen(line) - 1] != '\n')
+        if (line[0] != '\0' && line[strlen(line) - 1] != '\n')
             printf("\n");
         free(line);
         line_num++;
