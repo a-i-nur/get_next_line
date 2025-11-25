@@ -1,14 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aakhmeto <aakhmeto@student.42heilbronn.de> +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/25 16:50:36 by aakhmeto          #+#    #+#             */
+/*   Updated: 2025/11/25 16:52:31 by aakhmeto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/*
 #include "get_next_line.h"
 #include <fcntl.h>   // open
 #include <unistd.h>  // close, read
 #include <stdio.h>   // printf, perror
 #include <stdlib.h>  // free
-#include <string.h>
+#include <string.h>  //strlen
 
-/*
- * Функция для чтения и печати всех строк из заданного fd.
- * name используется только для красивого вывода (имя файла или "stdin").
- */
+
+// Функция для чтения и печати всех строк из заданного fd.
+// name используется только для красивого вывода (имя файла или "stdin").
+ 
 static void  read_from_fd(int fd, const char *name)
 {
     char    *line;
@@ -31,6 +44,8 @@ int main(int argc, char **argv)
 {
     int fd;
     int i;
+
+	printf("BUFFER_SIZE = %d\n", BUFFER_SIZE);
 
     // Если аргументов нет — читаем из stdin (fd = 0)
     if (argc == 1)
@@ -60,3 +75,4 @@ int main(int argc, char **argv)
     }
     return 0;
 }
+*/
