@@ -6,7 +6,7 @@
 /*   By: aakhmeto <aakhmeto@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:37:21 by aakhmeto          #+#    #+#             */
-/*   Updated: 2025/11/25 16:02:56 by aakhmeto         ###   ########.fr       */
+/*   Updated: 2025/11/25 17:17:08 by aakhmeto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,14 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include <stdio.h>
-# include <string.h>
 
 typedef struct s_read_buffer
 {
-	char	read_text[BUFFER_SIZE];
+	char	read_text[BUFFER_SIZE + 1];
 	ssize_t	read_bytes;
-	ssize_t	index_tail;
+	size_t	index_tail;
 	int		f_end_line;
 }	t_read_buffer;
-
 typedef struct s_ret_line
 {
 	char	*res;

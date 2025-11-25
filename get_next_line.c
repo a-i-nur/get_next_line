@@ -6,7 +6,7 @@
 /*   By: aakhmeto <aakhmeto@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:37:18 by aakhmeto          #+#    #+#             */
-/*   Updated: 2025/11/25 16:53:23 by aakhmeto         ###   ########.fr       */
+/*   Updated: 2025/11/25 17:22:03 by aakhmeto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_update_buf_info(t_read_buffer *buf, t_ret_line *line)
 {
-	if (buf->read_bytes <= 0 || buf->index_tail >= buf->read_bytes)
+	if (buf->read_bytes <= 0 || buf->index_tail >= (size_t)buf->read_bytes)
 	{
 		buf->index_tail = 0;
 		buf->f_end_line = 0;
@@ -26,7 +26,7 @@ static int	ft_update_buf_info(t_read_buffer *buf, t_ret_line *line)
 		line->res = (char *)malloc(line->size);
 		if (!line->res)
 			return (-1);
-		while (buf->index_tail < buf->read_bytes
+		while (buf->index_tail < (size_t)buf->read_bytes
 			&& buf->read_text[buf->index_tail] != '\n')
 		{
 			line->res[line->len] = buf->read_text[buf->index_tail];
