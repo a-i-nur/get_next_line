@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aakhmeto <aakhmeto@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: aakhmeto <aakhmeto@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:37:18 by aakhmeto          #+#    #+#             */
-/*   Updated: 2025/11/25 17:24:00 by aakhmeto         ###   ########.fr       */
+/*   Updated: 2026/02/04 22:12:59 by aakhmeto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static int	ft_update_buf_info(t_read_buffer *buf, t_ret_line *line)
 {
